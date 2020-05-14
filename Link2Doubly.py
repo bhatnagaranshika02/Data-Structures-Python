@@ -15,6 +15,14 @@ class doublyLinked:
         if self.head is not None:
             self.head.prev=new_node
         self.head=new_node
+    def append(self , new_data):
+        new_node = Node(new_data)
+        new_node.next = None
+        if self.head is None:
+            new_node.prev = None
+            self.head= new_node
+            return
+        
 
     def print(self,node):
         print("Lets traverse")
@@ -26,3 +34,4 @@ obj.push(5)
 obj.push(8)
 obj.push(9)
 obj.push(10)
+print(print())
