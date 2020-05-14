@@ -45,16 +45,18 @@ class linked_list:
                 
                 
     def deletebefore(self,beforewhat):
-        temp=self.start
-        before=temp
-        while temp!=None:
-            if temp.data!=beforewhat:
-                 before=temp
-                 temp=temp.next
-            else:
-                temp2=before.prev
-                temp.prev=temp2
-                break
+        if self.start==None or self.start==beforewhat:
+            print("Cant delete")
+        else:
+            temp=self.start
+            while temp!=None:
+                if temp.data==beforewhat:
+                    prevs=temp.prev.prev
+                    prevs.next=temp.prev
+                    prevs.next.next=None
+                    break
+                else:
+                    temp=temp.next
                 
                 
             
@@ -73,17 +75,21 @@ class linked_list:
                 temp=temp.next
 
     def deleteafter(self,afterwhat):
-       temp=self.start
-       after=temp
+        if self.start==None or self.start==afterwhat:
+            print("Cant delete")
+        else:
+            temp=self.start
+            while temp.next!=None:
+                if temp.data==afterwhat:
+                    nexts=temp.next.next
+                    temp.next=nexts
+                    
+                    break
+                else:
+                   temp=temp.next
+                    
+                
        
-       while temp!=None:
-            if after.data!=afterwhat:
-                after=temp
-                temp=temp.next
-            else:
-                temp2=temp.next
-                after.next=temp2
-                break
             
 
 
@@ -138,8 +144,7 @@ obj.addbefore(88,8)
 obj.traverse()
 obj.deleteafter(88)
 obj.traverse()
-obj.deletebefore(9)
-obj.addlast(77)
-obj.traverse()
+obj.deletebefore(7)
+
 
 
