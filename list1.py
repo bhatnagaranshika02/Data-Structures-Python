@@ -43,7 +43,7 @@ class linked_list:
             while temp.next!=None:
                 count+=1
                 temp=temp.next
-            print("Total number of nodes are: ",count)77
+            print("Total number of nodes are: ",count)
 
             
     def addafter(self,afterwhat,data):
@@ -147,6 +147,12 @@ class linked_list:
                     break
 
 
+    def count2(self,node):
+        if node is None:
+            return 0
+        else:
+            return 1+self.count2(node.next)
+
     def findvalue(self,index):
         if self.start==None:
             print("Mazak chalrha hai kya?")
@@ -187,5 +193,6 @@ mylist.deleteend()
 mylist.traverse()
 mylist.search(1)
 mylist.findvalue(3)
+mylist.count2(mylist.start)
 
 
