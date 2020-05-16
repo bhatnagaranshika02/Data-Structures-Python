@@ -23,6 +23,34 @@ class linked_list:
             print("List is empty")
         else:
             self.start=self.start.next
+
+    def delete(self,node):
+        temp=self.start
+        while temp:
+            if temp.data==node.data:
+                prevs=temp.prev
+                temp.next.prev=prevs
+                prevs.next=temp.next
+                break
+            else:
+                temp=temp.next
+                
+
+
+
+    def removedupli(self):
+        temp=self.start
+        l=[]
+        while temp:
+            if temp.data not in l:
+                l.append(temp.data)
+                temp=temp.next
+            else:
+                nxt=temp.next
+                self.delete(temp)
+                temp=nxt
+            
+
            
         
     def addbefore(self,data,beforewhat):
@@ -51,10 +79,14 @@ class linked_list:
             temp=self.start
             while temp!=None:
                 if temp.data==beforewhat:
-                    prevs=temp.prev.prev
-                    prevs.next=temp.prev
-                    prevs.next.next=None
-                    break
+                    if temp.prev==self.start:
+                        self.start=temp
+                    else:
+                        
+                        prevs=temp.prev.prev
+                        temp.prev=prevs
+                    
+                        break
                 else:
                     temp=temp.next
                 
@@ -145,6 +177,16 @@ obj.traverse()
 obj.deleteafter(88)
 obj.traverse()
 obj.deletebefore(7)
-
+obj.traverse()
+obj.deleteafter(7)
+obj.traverse()
+obj.deletebefore(9)
+obj.traverse()
+obj.addafter(10,9)
+obj.addafter(11,10)
+obj.addafter(11,11)
+obj.traverse()
+obj.removedupli()
+obj.traverse()
 
 
