@@ -1,5 +1,5 @@
 class Node(object):
-    sef __init__ (self,data):
+    def __init__ (self,data):
         self.data=data
         self.right=None
         self.left=None
@@ -14,4 +14,37 @@ class BST(object):
     def insert_helper(self,current,new_val):
         if current.data<new_val:
             if current.right:
-                
+                return self.insert_helper(current.right,new_val)
+            else:
+                current.right=Node(new_val)
+
+        else:
+            if current.left:
+                return self.insert_helper(current.left,new_val)
+            else:
+                current.left=Node(new_val)
+
+    def search(self,find_val):
+        return self.search_helper(self.root,find_val)
+
+    def search_helper(self,current,find_val):
+        if current:
+            if current.data==find_val:
+                return True
+            elif current.data<find_val:
+                return self.search_helper(current.right, find_val)
+            else:
+
+                return self.search_helper(current.left,find_val)
+        return False
+
+
+bst=BST(10)
+bst.insert(3)
+bst.insert(1)
+bst.insert(25)
+bst.insert(9)
+bst.insert(13)
+
+print(bst.search(9))
+print(bst.search(14))
