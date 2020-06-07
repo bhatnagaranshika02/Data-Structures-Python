@@ -16,7 +16,7 @@ class binary:
             while True:
                 if val<current.node:
                     if current.left:
-                        currnet=current.left
+                        current=current.left
                     else:
                         current.left=Node(val)
                         break
@@ -29,7 +29,7 @@ class binary:
                 else:
                     break
 
-    def height(root):
+def height(root):
         if root==None:
             return -1
         else:
@@ -48,5 +48,6 @@ arr = list(map(int, input().split()))
 for i in range(t):
     tree.create(arr[i])
 
-p=height(tree.root)
+p=
+height(tree.root)
 print(p)
