@@ -38,27 +38,13 @@ class Graph:
             nv = self.addVertex(f)
         if t not in self.vertList:
             nv = self.addVertex(t)
-        self.vertList[f].addNeighbor(self.vertList[t], weight)
+        self.vertList[f].add_n(self.vertList[t], weight)
 
     def getVertices(self):
         return self.vertList.keys()
 
     def __iter__(self):
         return iter(self.vertList.values())
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
 
 v=Vertex(1)
 v.add_n(2)

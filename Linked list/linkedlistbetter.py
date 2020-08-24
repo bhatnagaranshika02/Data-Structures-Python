@@ -16,12 +16,14 @@ class Linked_list:
             while temp.next:
                 temp=temp.next
             temp.next=new_node
+            new_node.next=None
 
     def print_list(self):
         temp=self.head
         while temp:
             print(temp.data)
             temp=temp.next
+        print('\n')
 
     def prepend(self,data):
         new_node=Node(data)

@@ -4,7 +4,7 @@
 def total(root):
     if root is None:
         return False
-    return total(root.left)+total(root.left) + 1
+    return total(root.left)+total(root.right) + 1
 
 def totalinternal(root):
     if root is None:
