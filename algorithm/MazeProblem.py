@@ -23,4 +23,53 @@ class MazeProblem:
 		if x == self.mazeSize-1 and y ==self.mazeSize-1:
 			self.solutionTable[x][y] =1
 			return True
-		return False
+		return False 
+
+	def isValid(self,x,y):
+		if x<0 or x >= self.mazeSize:
+			return False
+		if y<0 or y>=self.mazeSize:
+			return False
+		if self.mazeTable[x][y] == 0:
+			return False
+
+		return True
+
+	def showResult(self):
+		for i in range(self.mazeSize):
+			for j in range(self.mazeSize):
+				if self.solutionTable[i][j] == 1:
+					print(' S ',end = "")
+				else:
+					print(' - ',end = "")
+
+			print('\n')
+
+if __name__ == "__main__":
+	mazeTable = [[1,1,1,1,1],
+	             [1,0,0,1,0],
+	             [0,0,0,1,0],
+	             [1,1,1,1,1],
+	             [1,1,1,0,1]]
+
+	MazeProblem = MazeProblem(mazeTable)
+	MazeProblem.solveMaze()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
