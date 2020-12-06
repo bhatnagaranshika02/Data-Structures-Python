@@ -8,7 +8,8 @@ def subArraySum(arr,n,summ):
 			start+=1
 
 		if curr_sum == summ:
-			print(summ)
+			print(arr[start])
+			return 1
 		if i<n:
 			curr_sum+=arr[i]
 		i+=1
@@ -18,5 +19,5 @@ def subArraySum(arr,n,summ):
 
 arr = [15,2,4,8,9,5,10,23]
 n=len(arr)
-sum=23
+summ=23
 subArraySum(arr,n,summ)
