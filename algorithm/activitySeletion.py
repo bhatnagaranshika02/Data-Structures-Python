@@ -2,7 +2,7 @@ def Activity(s,f):
 	n=len(f)
 	j=0
 	print(j)
-	for i in xrange(n):
+	for i in range(1,n):
 		if s[i]>=f[j]:
 			print(i)
 			j=i
