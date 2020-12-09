@@ -8,5 +8,5 @@ def hotpotato(li,n):
             simqueue.enqueue(simqueue.dequeue())
         simqueue.dequeue()
     return simqueue.dequeue()
-print(hotpotato(['anshika','aman','goru','harsh'])
+print(hotpotato(['anshika','aman','goru','harsh']))
             
