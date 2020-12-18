@@ -1,7 +1,9 @@
+
+
 from collections import defaultdict
 class Graph:
 	def __init__ (self,vertices):
-		elf.v = vertices
+		self.v = vertices
 		self.graph = defaultdict(list)
 
 	def addEdge(self,v,w):
