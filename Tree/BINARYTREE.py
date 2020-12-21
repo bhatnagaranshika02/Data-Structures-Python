@@ -32,6 +32,39 @@ def insert(root,key):
                 break
             else:
                 q.append(root.right)
+def levelorder(root):
+    if root is None:
+        print("Empty tree")
+    else:
+        q=[]
+        q.append(root)
+        while q:
+            root=q[0]
+            print(q.pop(0).key,end='\n')
+            if root.left:
+                q.append(root.left)
+            
+            if root.right:
+                q.append(root.right)
+
+def size(root):
+    if root is None:
+        return "empty"
+    else:
+        count=1
+        q=[]
+        q.append(root)
+        while q:
+            root=q[0]
+            q.pop(0)
+            if root.left:
+                count+=1
+                q.append(root.left)
+            if root.right:
+                count+=1
+                q.append(root.right)
+        return count
+              
 
         
 if __name__ == '__main__':
@@ -40,7 +73,9 @@ if __name__ == '__main__':
     root.left.left = newNode(7) 
     root.right = newNode(9) 
     root.right.left = newNode(15) 
-    root.right.right = newNode(8) 
+    root.right.right = newNode(8)
+    levelorder(root)
+    print('\n','size is: ',size(root))
  
     print("Inorder traversal before insertion:", end = " ")
     inorder(root) 
@@ -50,4 +85,5 @@ if __name__ == '__main__':
     print() 
     print("Inorder traversal after insertion:", end = " ")
     inorder(root)
+    print('\n','new size is: ',size(root))
  
