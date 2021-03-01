@@ -1,7 +1,7 @@
 class Queue(object):
     def __init__ (self):
         self.items=[]
-    def enqueue9self,value):
+    def enqueue(self,value):
         self.items.insert(0,value)
     def dequeue(self):
         if not self.is_empty():
